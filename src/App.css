@@ -1,5 +1,21 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 95%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
   text-align: center;
+  background-color: #f9f9f9;
+  flex-grow: 1;
 }
 
 .App-logo {
@@ -35,4 +51,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  margin: 10px 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+section {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+h2 {
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 10px 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+form ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+form ul li {
+  margin-bottom: 5px;
+}
+
+form ul li button {
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 2px 6px;
+  cursor: pointer;
 }
