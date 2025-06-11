@@ -1,0 +1,2 @@
+=======
+import { FaHome, FaUser, FaCode, FaProjectDiagram, FaGraduationCap, FaEnvelope, FaFileAlt, FaLinkedin, FaGithub, FaPhone, FaMapMarkerAlt, FaRobot } from "react-icons/fa";
