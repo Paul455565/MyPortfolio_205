@@ -228,9 +228,9 @@ const App = () => {
           <div className="column">
             <h3>Education</h3>
             <ul>
-              <li><strong>Advanced Diploma in ICT</strong><br /><em>Application Development Focus</em><br />Currently Studying</li>
-              <li><strong>Diploma in ICT</strong><br /><em>Information and Communication Technology</em><br />Completed 2024</li>
-              <li><strong>Higher Certificate in ICT</strong><br /><em>Information and Communication Technology</em><br />Completed 2020</li>
+              <li><strong>Advanced Diploma in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Currently Studying</li>
+              <li><strong>Diploma in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Completed 2024</li>
+              <li><strong>Higher Certificate in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Completed 2020</li>
                <li><strong>Matric</strong><br /><em>Siphamandla Senior Secondary School</em><br />Completed 2019</li>
 
             </ul>
