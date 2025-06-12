@@ -53,12 +53,12 @@ body {
 
 /* Sections fill full screen and content is centered */
 .section {
-  padding: 100px 20px 60px;
-  min-height: 100vh;
+  padding: 60px 20px 40px;
+  /* Removed min-height to allow height to adapt to content */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
 }
 
@@ -72,6 +72,33 @@ body {
   background: rgb(218, 218, 152); /* dark blue */
   color: white;
   text-align: center;
+}
+
+.full-screen-edu {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  padding-top: 80px; /* offset for fixed navbar height */
+  box-sizing: border-box;
+  scroll-padding-top: 80px; /* offset for smooth scroll */
+}
+
+.edu-exp {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: stretch;
+  flex-grow: 1;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .greeting {

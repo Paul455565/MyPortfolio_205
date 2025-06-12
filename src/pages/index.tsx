@@ -16,10 +16,6 @@ const App = () => {
 
   const handleNavClick = (section: string) => {
     setActiveSection(section);
-    const el = document.getElementById(section);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   const toggleChatbot = () => {
@@ -116,6 +112,78 @@ const App = () => {
         </ul>
       </nav>
 
+      {activeSection === "home" && (
+        <section id="home" className="full-screen home">
+          <p className="greeting">Hello, Welcome I'm</p>
+          <h1 className="name-highlight">Paulose Maja</h1>
+          <p className="subtitle">Fullstack Software Developer</p>
+          <p className="description">A passionate FullStack Development based in South Africa</p>
+          <div className="home-buttons">
+            <button className="btn-primary" onClick={() => handleNavClick("projects")}>View My Work</button>
+            <button className="btn-secondary" onClick={() => handleNavClick("contact")}>Get In Touch</button>
+          </div>
+        </section>
+      )}
+
+      {activeSection === "about" && (
+        <section id="about" className="section about">
+          <h2 className="section-title">About Me</h2>
+          <p className="section-subtitle"><i>Who is Paulose Maja?</i></p>
+          <div className="about-container">
+            <div className="about-img">
+              <img src="/home_pic.jpeg" alt="Paulose Maja" />
+            </div>
+            <div className="about-text">
+              <h3>Personal Introduction</h3>
+              <p>
+                I am a passionate Fullstack Software Developer dedicated to crafting scalable,
+                maintainable, and efficient web applications.
+              </p>
+              <p>
+                My goal is to continually grow as a developer, contribute to impactful projects,
+                and collaborate in team environments that push boundaries and embrace innovation.
+              </p>
+              <p>
+                I thrive on solving real-world problems with clean code, intuitive user experiences,
+                and a commitment to lifelong learning in the tech industry.
+              </p>
+
+              <h3>Vision Statement</h3>
+              <p>
+                To become a leading software developer who builds inclusive, accessible, and meaningful
+                digital solutions that positively impact communities and inspire innovation across Africa
+                and the globe.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {activeSection === "skills" && (
+        <section id="skills" className="section skills">
+          <h2 className="section-title">Skills</h2>
+          <p className="section-subtitle">My technical and soft skills</p>
+          <div className="skills-container">
+            <div className="skills-column">
+              <h3>Technical Skills</h3>
+              <div className="skill-tags">
+                {technicalSkills.map((skill) => (
+                  <span key={skill} className="skill-tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+            <div className="skills-column">
+              <h3>Soft Skills</h3>
+              <div className="skill-tags">
+                {softSkills.map((skill) => (
+                  <span key={skill} className="skill-tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {activeSection === "resume" && (
         <section id="resume" className="section resume">
           <h2 className="section-title">Resume</h2>
@@ -133,185 +201,124 @@ const App = () => {
         </section>
       )}
 
-      <section id="home" className="full-screen home">
-        <p className="greeting">Hello, Welcome I'm</p>
-        <h1 className="name-highlight">Paulose Maja</h1>
-        <p className="subtitle">Fullstack Software Developer</p>
-        <p className="description">A passionate FullStack Development based in South Africa</p>
-        <div className="home-buttons">
-          <button className="btn-primary" onClick={() => handleNavClick("projects")}>View My Work</button>
-          <button className="btn-secondary" onClick={() => handleNavClick("contact")}>Get In Touch</button>
-        </div>
-      </section>
-
-      <section id="about" className="section about">
-        <h2 className="section-title">About Me</h2>
-        <p className="section-subtitle"><i>Who is Paulose Maja?</i></p>
-        <div className="about-container">
-          <div className="about-img">
-            <img src="/home_pic.jpeg" alt="Paulose Maja" />
-          </div>
-          <div className="about-text">
-            <h3>Personal Introduction</h3>
-            <p>
-              I am a passionate Fullstack Software Developer dedicated to crafting scalable,
-              maintainable, and efficient web applications.
-            </p>
-            <p>
-              My goal is to continually grow as a developer, contribute to impactful projects,
-              and collaborate in team environments that push boundaries and embrace innovation.
-            </p>
-            <p>
-              I thrive on solving real-world problems with clean code, intuitive user experiences,
-              and a commitment to lifelong learning in the tech industry.
-            </p>
-
-            <h3>Vision Statement</h3>
-            <p>
-              To become a leading software developer who builds inclusive, accessible, and meaningful
-              digital solutions that positively impact communities and inspire innovation across Africa
-              and the globe.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" className="section skills">
-        <h2 className="section-title">Skills</h2>
-        <p className="section-subtitle">My technical and soft skills</p>
-        <div className="skills-container">
-          <div className="skills-column">
-            <h3>Technical Skills</h3>
-            <div className="skill-tags">
-              {technicalSkills.map((skill) => (
-                <span key={skill} className="skill-tag">{skill}</span>
-              ))}
-            </div>
-          </div>
-          <div className="skills-column">
-            <h3>Soft Skills</h3>
-            <div className="skill-tags">
-              {softSkills.map((skill) => (
-                <span key={skill} className="skill-tag">{skill}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="section projects">
-        <h2 className="section-title">Projects</h2>
-        <p className="section-subtitle">Showcasing my technical skills and creativity</p>
-        <div className="project-grid">
-          {projects.map(({ title, description, technologies, demoLink }) => (
-            <div key={title} className="project-card">
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <p><strong>Technologies Used:</strong></p>
-              <div className="skill-tags">
-                {technologies.map((tech) => (
-                  <span key={tech} className="skill-tag">{tech}</span>
-                ))}
+      {activeSection === "projects" && (
+        <section id="projects" className="section projects">
+          <h2 className="section-title">Projects</h2>
+          <p className="section-subtitle">Showcasing my technical skills and creativity</p>
+          <div className="project-grid">
+            {projects.map(({ title, description, technologies, demoLink }) => (
+              <div key={title} className="project-card">
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <p><strong>Technologies Used:</strong></p>
+                <div className="skill-tags">
+                  {technologies.map((tech) => (
+                    <span key={tech} className="skill-tag">{tech}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  <a href={demoLink} target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
               </div>
-              <div className="project-links">
-                <a href={demoLink} target="_blank" rel="noopener noreferrer">Demo</a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {activeSection === "education" && (
+        <section id="education" className="section edu-exp full-screen-edu">
+          <h5 className="section-title">Education & Experience</h5>
+          <p className="section-subtitle">My academic journey and professional experience</p>
+          <div className="edu-exp">
+            <div className="column">
+              <h3>Education</h3>
+              <ul>
+                <li><strong>Advanced Diploma in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Currently Studying</li>
+                <li><strong>Diploma in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Completed 2024</li>
+                <li><strong>Higher Certificate in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Completed 2020</li>
+                 <li><strong>Matric</strong><br /><em>Siphamandla Senior Secondary School</em><br />Completed 2019</li>
+              </ul>
+            </div>
+            <div className="column">
+              <h3>Experience</h3>
+              <ul>
+                <li><strong>Software Development Intern</strong><br />CAPACITI<br />2025 - Present<br />Working on real-world software development projects, collaborating with experienced developers, and enhancing technical skills in a professional environment.</li>
+                <li><strong>FullStack Developer</strong><br />School Projects<br />2023 - Present<br />Developed custom websites and web applications for my schools projects.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {activeSection === "contact" && (
+        <section id="contact" className="section contact">
+          <h2 className="section-title">Get In Touch</h2>
+          <p className="section-subtitle">Let's connect and discuss opportunities</p>
+          <div className="section contact-content">
+            <div className="contact-left">
+              <h3>Contact Details</h3>
+              <div className="contact-detail">
+                <div className="icon-container"><FaEnvelope size={18} color="#00796b" /></div>
+                <strong className="contact-label">Email</strong>
+                <span className="contact-value"> paulmaja14@gmail.com</span>
+              </div>
+              <div className="contact-detail">
+                <div className="icon-container"><FaPhone size={18} color="#00796b" /></div>
+                <strong className="contact-label">Phone</strong>
+                <span className="contact-value"> +27 76 298 3736</span>
+              </div>
+              <div className="contact-detail">
+                <div className="icon-container"><FaMapMarkerAlt size={18} color="#00796b" /></div>
+                <strong className="contact-label">Location</strong>
+                <span className="contact-value"> Cape Town, South Africa</span>
+              </div>
+              <div className="social-icons">
+                <a href="https://www.linkedin.com/in/paulose-maja-53b8631a2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="icon-container">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/Paul455565" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="icon-container">
+                  <FaGithub />
+                </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="education" className="section edu-exp">
-        <h2 className="section-title">Education & Experience</h2>
-        <p className="section-subtitle">My academic journey and professional experience</p>
-        <div className="edu-exp">
-          <div className="column">
-            <h3>Education</h3>
-            <ul>
-              <li><strong>Advanced Diploma in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Currently Studying</li>
-              <li><strong>Diploma in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Completed 2024</li>
-              <li><strong>Higher Certificate in ICT</strong><br /><em>Cape Peninsula University of Technology</em><br />Completed 2020</li>
-               <li><strong>Matric</strong><br /><em>Siphamandla Senior Secondary School</em><br />Completed 2019</li>
-
-            </ul>
-          </div>
-          <div className="column">
-            <h3>Experience</h3>
-            <ul>
-              <li><strong>Software Development Intern</strong><br />CAPACITI<br />2025 - Present<br />Working on real-world software development projects, collaborating with experienced developers, and enhancing technical skills in a professional environment.</li>
-              <li><strong>FullStack Developer</strong><br />School Projects<br />2023 - Present<br />Developed custom websites and web applications for my schools projects.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="section contact">
-        <h2 className="section-title">Get In Touch</h2>
-        <p className="section-subtitle">Let's connect and discuss opportunities</p>
-        <div className="section contact-content">
-          <div className="contact-left">
-            <h3>Contact Details</h3>
-            <div className="contact-detail">
-              <div className="icon-container"><FaEnvelope className="contact-icon" /></div>
-              <strong className="contact-label">Email</strong>
-              <span className="contact-value"> paulmaja14@gmail.com</span>
-            </div>
-            <div className="contact-detail">
-              <div className="icon-container"><FaPhone className="contact-icon" /></div>
-              <strong className="contact-label">Phone</strong>
-              <span className="contact-value"> +27 76 298 3736</span>
-            </div>
-            <div className="contact-detail">
-              <div className="icon-container"><FaMapMarkerAlt className="contact-icon" /></div>
-              <strong className="contact-label">Location</strong>
-              <span className="contact-value"> Cape Town, South Africa</span>
-            </div>
-            <div className="social-icons">
-              <a href="https://www.linkedin.com/in/paulose-maja-53b8631a2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="icon-container">
-                <FaLinkedin />
-              </a>
-              <a href="https://github.com/Paul455565" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="icon-container">
-                <FaGithub />
-              </a>
+            <div className="contact-right">
+              <h3>Contact Me</h3>
+              <form onSubmit={sendEmail}>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={contactName}
+                  onChange={(e) => setContactName(e.target.value)}
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  value={contactEmail}
+                  onChange={(e) => setContactEmail(e.target.value)}
+                  required
+                />
+                <textarea
+                  placeholder="Your Message"
+                  rows={5}
+                  value={contactMessage}
+                  onChange={(e) => setContactMessage(e.target.value)}
+                  required
+                ></textarea>
+                <button type="submit" className="btn-primary" disabled={sendingStatus === "sending"}>
+                  {sendingStatus === "sending" ? "Sending..." : "Send Message"}
+                </button>
+              </form>
+              {sendingStatus === "success" && <p className="success-message">Message sent successfully!</p>}
+              {sendingStatus === "error" && <p className="error-message">Failed to send message. Please try again later.</p>}
+              <div className="contact-cta">
+                <h4>Ready to collaborate?</h4>
+                <p>I'm always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
+              </div>
             </div>
           </div>
-          <div className="contact-right">
-            <h3>Contact Me</h3>
-            <form onSubmit={sendEmail}>
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={contactName}
-                onChange={(e) => setContactName(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={contactEmail}
-                onChange={(e) => setContactEmail(e.target.value)}
-                required
-              />
-              <textarea
-                placeholder="Your Message"
-                rows={5}
-                value={contactMessage}
-                onChange={(e) => setContactMessage(e.target.value)}
-                required
-              ></textarea>
-              <button type="submit" className="btn-primary" disabled={sendingStatus === "sending"}>
-                {sendingStatus === "sending" ? "Sending..." : "Send Message"}
-              </button>
-            </form>
-            {sendingStatus === "success" && <p className="success-message">Message sent successfully!</p>}
-            {sendingStatus === "error" && <p className="error-message">Failed to send message. Please try again later.</p>}
-            <div className="contact-cta">
-              <h4>Ready to collaborate?</h4>
-              <p>I'm always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Chatbot Icon */}
       <div className="chatbot-icon" onClick={toggleChatbot} title="Chat with me">
@@ -339,12 +346,15 @@ const App = () => {
         </section>
       )}
 
-      <footer className="footer">
-        <p>© 2025 Paulose Maja. All rights reserved.</p>
-      </footer>
+{activeSection === "contact" && (
+  <footer className="footer">
+    <p>© 2025 Paulose Maja. All rights reserved.</p>
+  </footer>
+)}
     </>
   );
 };
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
 
