@@ -5,7 +5,7 @@ body {
   color: #333;
   scroll-behavior: smooth;
   overflow-y: scroll;
-  background-color: rgb(240, 240, 224);
+  background: linear-gradient(to right, #6a8caf, #f7a1a8);
 }
 
 /* Navbar stays visible and is larger */
@@ -69,10 +69,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(218, 218, 152); /* dark blue */
-  color: white;
+ background: linear-gradient(to right, #1e3c72, #f53844);
   text-align: center;
 }
+
 
 .full-screen-edu {
   height: 100vh;
@@ -103,7 +103,7 @@ body {
 
 .greeting {
   font-size: 1.2rem;
-  color: #666;
+  color: black;
   margin-bottom: 10px;
 }
 
@@ -116,13 +116,13 @@ body {
 
 .subtitle {
   font-size: 1.5rem;
-  color: #666;
+  color: black;
   margin: 10px 0 20px;
 }
 
 .description {
   font-size: 1rem;
-  color: #777;
+  color: black;
   margin-bottom: 30px;
   max-width: 400px;
 }
@@ -186,10 +186,15 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+
+body p {
+  color: black;
+}
+
 .about-text {
   flex: 2 1 400px;
   text-align: left;
-  color: #444;
+  color: black;
 }
 
 .about-text h3 {
@@ -216,7 +221,7 @@ body {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 40px;
-  color: #666;
+  color: black;
 }
 
 /* Skills Section */

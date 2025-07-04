@@ -39,7 +39,7 @@ const App = () => {
       title: "Travique Travel Assistant",
       description: "A smart travel planning platform built with Supabase and React, helping users plan and organize their trips efficiently.",
       technologies: ["React js", "Firebase", "JavaScript", "CSS"],
-      demoLink: "https://travique-3.vercel.app/"
+      demoLink: "https://aidan2125.github.io/Backend-testing/"
     },
     {
       title: "Digital Resource Hub",
@@ -52,7 +52,7 @@ const App = () => {
       title: "Xolisa Portfolio(in progress)",
       description: "A personal website for a muisic artist, showcasing their music, biography, and contact information. He will do promotes ",
       technologies: ["React", "Firebase", "CSS", "JavaScript"],
-      demoLink: "https://xolisawebsites.vercel.app/"
+      demoLink: "https://xolisa-website.vercel.app/"
     },
   ];
 
